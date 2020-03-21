@@ -5,5 +5,25 @@
 // Iterate over the topics creating a new Tab component and add it to the DOM
 // under the .topics element.
 //
+
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    .then(response => {
+        console.log(response.data);
+        response.data.topics.forEach(item => {
+            topics.append(tabCreator(item));
+        })
+    })
+    .catch(error => {
+        console.log("The data was not returned: ", error);
+    })
+
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+function tabCreator(topic) {
+    const tab = document.createElement('div');
+    tab.classList.add('tab');
+    tab.textContent = topic;
+
+    return tab;
+}
+const topics = document.querySelector(".topics");
