@@ -30,13 +30,28 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+DOM -  Document Object Model.
+The DOM is an object-based representation of the source HTML document. 
+The object structure of the DOM is represented by a “node tree”. It is a tree with a single parent stem that branches out into several child branches, each which may have leaves. The parent “stem” is the root <html> element, the child “branches” are the nested elements, and the “leaves” are the content within the elements.
+
 2. What is an event?
+
+HTML events are "things" that happen to HTML elements.
+When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+When the page loads, it is called an event. When the user clicks a button, that click too is an event. Other examples include events like pressing any key, closing a window, resizing a window, mouseenter, mouseleave, drag, drop, weel, select.
 
 3. What is an event listener?
 
+An event listener is a procedure in JavaScript that waits for an event to occur. The simple example of an event is a user clicking the mouse or pressing a key on the keyboard.
+
 4. Why would we convert a NodeList into an Array?
 
+NodeLists are actually not a JavaScript API, but a browser API. So a NodeList is not an array. 
+Things like querySelectorAll() and getElementsByTagName() aren’t JavaScript methods, they’re browser APIs that let you access DOM elements. You can then manipulate them with JavaScript. So for using JavaScript methods like filter(), map(), reduce(), we need to convert a Nodelist into an array by using Array.from(). The Array.from() method creates a new array from an existing one, or from an array-like object (which is what a NodeList is).
+
 5. What is a component?
+
+A component is a small, potentially re-usable set of logic, behaviors and interface elements (UI or API).
 
 ### Git Set up
 
